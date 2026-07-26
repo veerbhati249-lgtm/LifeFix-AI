@@ -1,0 +1,196 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap');
+
+* {
+  @apply scroll-smooth;
+}
+
+html {
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  @apply bg-dark-900 text-white;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-dark-800;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-primary-600 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-primary-500;
+}
+
+/* Selection */
+::selection {
+  @apply bg-primary-500 text-white;
+}
+
+/* Glassmorphism */
+.glass {
+  @apply bg-white/10 backdrop-blur-md border border-white/20;
+}
+
+.glass-dark {
+  @apply bg-dark-800/80 backdrop-blur-md border border-white/10;
+}
+
+/* Gradients */
+.gradient-purple {
+  @apply bg-gradient-to-r from-primary-500 to-primary-700;
+}
+
+.gradient-blue {
+  @apply bg-gradient-to-r from-secondary-500 to-secondary-700;
+}
+
+.gradient-pink {
+  @apply bg-gradient-to-r from-pink-500 to-rose-500;
+}
+
+/* Glows */
+.glow-purple {
+  @apply shadow-glow-md;
+}
+
+.glow-blue {
+  @apply shadow-glow-blue-md;
+}
+
+/* Text Utilities */
+.text-gradient {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-primary-500 to-secondary-500;
+}
+
+.text-glow {
+  @apply text-white drop-shadow-lg;
+}
+
+/* Button Styles */
+.btn-primary {
+  @apply px-6 py-2 bg-gradient-to-r from-primary-500 to-primary-700 rounded-lg font-semibold text-white transition-all duration-300 hover:shadow-glow-md hover:scale-105 active:scale-95;
+}
+
+.btn-secondary {
+  @apply px-6 py-2 border-2 border-primary-500 text-primary-400 rounded-lg font-semibold transition-all duration-300 hover:bg-primary-500/10 hover:border-primary-400;
+}
+
+.btn-ghost {
+  @apply px-4 py-2 text-white/70 rounded-lg font-medium transition-all duration-300 hover:text-white hover:bg-white/10;
+}
+
+/* Form Styles */
+.input-field {
+  @apply w-full px-4 py-2 bg-dark-800 border border-white/10 rounded-lg text-white placeholder-white/50 transition-all duration-300 focus:outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-500/30;
+}
+
+.textarea-field {
+  @apply w-full px-4 py-2 bg-dark-800 border border-white/10 rounded-lg text-white placeholder-white/50 transition-all duration-300 focus:outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-500/30 resize-none;
+}
+
+/* Card Styles */
+.card {
+  @apply glass rounded-2xl p-6 transition-all duration-300 hover:border-primary-500/50;
+}
+
+.card-hover {
+  @apply card hover:shadow-glow-lg hover:-translate-y-1;
+}
+
+/* Link Styles */
+.link-primary {
+  @apply text-primary-400 hover:text-primary-300 transition-colors duration-300;
+}
+
+.link-gradient {
+  @apply text-gradient hover:text-white transition-all duration-300;
+}
+
+/* Badge Styles */
+.badge {
+  @apply inline-block px-3 py-1 bg-primary-500/20 text-primary-400 rounded-full text-sm font-medium border border-primary-500/50;
+}
+
+/* Animation */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes glow {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(168, 85, 247, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(168, 85, 247, 0.8);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+/* Responsive Typography */
+@media (max-width: 768px) {
+  body {
+    @apply text-sm;
+  }
+
+  h1 {
+    @apply text-3xl;
+  }
+
+  h2 {
+    @apply text-2xl;
+  }
+
+  h3 {
+    @apply text-xl;
+  }
+}
+
+/* Print Styles */
+@media print {
+  body {
+    @apply bg-white text-black;
+  }
+
+  .glass,
+  .glass-dark {
+    @apply border-0 bg-white;
+  }
+}
